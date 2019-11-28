@@ -1,0 +1,101 @@
+html {
+  font-size:30;
+}
+body {
+    font-family: arial;
+    font-size: 1.15em;
+    color: black;
+}
+.boldtext
+{
+  font-weight:bold;
+}
+.heading{
+  margin-left:50px;
+  height:150px;
+  overflow:hidden;
+  position: relative;
+}
+.headlinetext
+{
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  left: 650px;
+  top: 25px;
+}
+#headerimage {
+    opacity: 0.75;
+    width:100%;
+    height=auto;
+
+}
+#yes{
+  padding-right:50px;
+}
+.view-box {
+	width: 90%;
+	height: 50vh;
+	margin: 1em auto;
+	overflow: scroll;
+	border: 1px solid rgba(0,0,0,0.4);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+#dots{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: url(/img/polacks.jpg);
+	background-repeat: no-repeat;
+	width:1920px;
+	height: 1078px;
+	cursor: crosshair;
+}
+#dots div {
+	position: absolute;
+	background: black;
+	color: white;
+	border-radius: 10px;
+	width:20px;
+	height:20px;
+	text-align: center;
+}
+#orderList {
+	top:1em;
+	left:1em;
+	position: absolute;
+	z-index: 2;
+	color:black;
+	background: rgba(255,255,255, 0.5);
+	padding: 1em;
+}
+
+.customerinformation
+{
+  background-color:black;
+  color:white;
+}
+.button:hover{
+  color: blue;
+  cursor: pointer;
+}
+.indentedtext
+{
+  margin-left:50px;
+}
+.midsection
+{
+  border: 2px dashed black;
+  padding-left: 30px;
+  border-radius: 20px
+}
+.customerinformation
+{
+  border:2px dashed white;
+  padding-left: 30px;
+}
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 14em);
+}
