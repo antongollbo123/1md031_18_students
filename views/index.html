@@ -1,9 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+        <script src="https://vuejs.org/js/vue.js"></script>
+        <<script src="/socket.io/socket.io.js" defer></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script src="js/js_script.js" defer></script>
+        <script src="js/vue_script.js" defer></script>
+
+        <title id = "Welcometext">Welcome to burger ordering service!</title>
+        <meta charset="utf-8"/>
     </head>
     <body>
-        <h1>Hello World!!!</h1>
+      <main id = "wrapper">
+        <div class = "heading">
+        <img id = "headerimage" src="https://www.dutchbone.com/wp-content/uploads/2017/02/Gym-Gin-interieur-0010.jpg" alt = "Header"></div>
+        <div class = "headlinetext">
+          <h1 id = "yes">Welcome to BurgerOnline!</h1></div>
+        </div>
+
+
+      <section class = "indentedtext">
+        <h2>Select your burger </h2>
+        <div> This is where you execute burger selection </div>
+      </br>
+      </section>
+
+      <section class="midsection">
+        <div class = "wrapper">
+        <div v-for ="burger in burgers">
+        <div>
+        {{burger.name}}
+      </div>
+      <div>
+        <img v-bind:src='burger.img'
+        width="250" height="180">
+      </div>
+        <ul>
+          <li>{{burger.name}}</li>
+          <section class = "boldtext">
+          <li v-if="burger.lactose ==true">Contains lactose</li>
+          <li v-if = "burger.gluten ==true">Contains gluten</li></section>
+          <li>Calories: {{burger.calories}} </li>
+        </br>
+          Honom ska jag ha!
+          <input type = "checkbox" v-model = "checkbox" v-bind:value= "burger.name">
+        </ul>
+
+      </div>
+       </div>
+     </section>
+
+      <section class = "customerinformation">
+
+        <h3>Customer information </h3>
+        <p> <form>
+          <label for = "name">Full name</label><br>
+          <input type="text" id = "name" name="fn" required="required" placeholder="First and last name" v-model = "fullname">
+          <br/>
+          <br/>
+          <label for = "email">Email adress</label><br>
+            <input type="text" id = "email" name="ea" required="required" placeholder="Email" v-model = "email">
+            <br/>
+            <br/>
+          </form>
+            <h1> Press the correct location for delivery: </h1>
+            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+            <div class="view-box">
+              <div id="dots" v-on:click="displayOrder">
+                  <div v-bind:style=" { left: details.x + 'px', top: details.y + 'px'}">
+                    T
+                  </div>
+              </div>
+        </div>
+
+                <label for="recipient">Payment method</label><br>
+                <select id="recipient" name="rcp" v-model="payment">
+                <option >Credit card</option>
+                <option >Klarna</option>
+                <option >Gift card</option>
+              </select>
+
+                <br/>
+                <br/>
+                <form>
+                  <input type="radio" name="gender" value="male" v-model = "gender"> Male<br>
+                  <input type="radio" name="gender" value="female" v-model = "gender"> Female<br>
+                  <input type="radio" name="gender" value="other" v-model = "gender"> Other
+                </form>
+                <br/>
+                <br/>
+
+                <button type="submit" class = "button" v-on:click = "addOrder"><img src="https://www.burgerking.se/011_se/Product%20images/Burgers/image-thumb__7664__modMenuProductTile/KINGJR%20HAMBURGER%201500x1500~-~320w.png"> Send Info</button>
+
+        </p>
+      </section>
+      <pre>{{finishedorder}}</pre>
+    </main>
+      <br />
+      <br />
+      <br />
+      <br />
+      <hr>
+      <hr>
+        <footer> Anton Gollbo website </footer>
     </body>
 </html>
